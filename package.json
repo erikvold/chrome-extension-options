@@ -11,6 +11,10 @@
     "extensions",
     "options"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrmisterman/chrome-extension-options"
+  },
   "author": "Mike McCabe <mrmikemccabe@gmail.com>",
   "license": "MIT",
   "devDependencies": {
