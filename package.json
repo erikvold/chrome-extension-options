@@ -1,0 +1,16 @@
+{
+  "name": "chrome-extension-options",
+  "version": "0.1.0",
+  "description": "Easily set up an options page for a Chrome Extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome",
+    "extensions",
+    "options"
+  ],
+  "author": "Mike McCabe <mrmikemccabe@gmail.com>",
+  "license": "ISC"
+}
