@@ -2,7 +2,7 @@
 
 var React = require('react')
 var ReactDOM = require('react-dom')
-var Hello = require('./Hello.jsx')
+var StringOption = require('./StringOption.jsx');
 
-ReactDOM.render(<Hello />, document.getElementById('content'))
+ReactDOM.render(<StringOption id="test" name="Test" />, document.getElementById('content'))
 

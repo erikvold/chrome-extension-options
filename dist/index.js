@@ -48,9 +48,10 @@
 
 	var React = __webpack_require__(1)
 	var ReactDOM = __webpack_require__(2)
-	var Hello = __webpack_require__(3)
 
-	ReactDOM.render(React.createElement(Hello, null), document.getElementById('content'))
+	var StringOption = __webpack_require__(3);
+
+	ReactDOM.render(React.createElement(StringOption, {name: "Test"}), document.getElementById('content'))
 
 
 
@@ -68,19 +69,28 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict'
+	"use strict";
 
-	var React = __webpack_require__(1)
-
-	module.exports = React.createClass({
-	    displayName: 'HelloReact',
-		render: function(){
-			return React.createElement("div", null, "Hello React")
+	module.exports = React.createClass({displayName: "module.exports",
+		getInitialState: function() {
+			return {
+				value: ""
+			}
+		},
+		handleValueChange: function(e) {
+			this.state.value = e.target.value;
+			console.log(this.state.value);
+		},
+		render: function() {
+			return (
+				React.createElement("div", {className: "option"}, 
+					React.createElement("label", null, this.props.name), " ", React.createElement("input", {onChange: this.handleValueChange, defaultValue: this.state.value, type: "text"})
+				)
+			);
 		}
-	})
-
+	});
 
 /***/ }
 /******/ ]);
