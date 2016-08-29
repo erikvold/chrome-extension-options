@@ -10,7 +10,12 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.jsx$/,
-				loader: 'jsx-loader',
+				loader: 'babel-loader',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.json$/,
+				loader: 'json-loader',
 				exclude: /node_modules/
 			}
 		]
@@ -20,6 +25,6 @@ module.exports = {
 		'react-dom': 'ReactDOM'
 	},
 	resolve: {
-		extensions: ['', '*.js', '*.jsx']
+		extensions: ['', '.js', '.jsx']
 	}
 };

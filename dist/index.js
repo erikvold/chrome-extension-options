@@ -44,16 +44,16 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict'
+	'use strict';
 
-	var React = __webpack_require__(1)
-	var ReactDOM = __webpack_require__(2)
-
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(2);
 	var StringOption = __webpack_require__(3);
+	var options = __webpack_require__(5);
 
-	ReactDOM.render(React.createElement(StringOption, {name: "Test"}), document.getElementById('content'))
+	console.log(options);
 
-
+	ReactDOM.render(React.createElement(StringOption, { id: options[0].id, name: options[0].name }), document.getElementById('content'));
 
 /***/ },
 /* 1 */
@@ -69,28 +69,102 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	module.exports = React.createClass({displayName: "module.exports",
-		getInitialState: function() {
+	var chrome = __webpack_require__(4);
+
+	module.exports = React.createClass({
+		displayName: "exports",
+
+		getInitialState: function getInitialState() {
 			return {
 				value: ""
-			}
+			};
 		},
-		handleValueChange: function(e) {
-			this.state.value = e.target.value;
-			console.log(this.state.value);
+		handleValueChange: function handleValueChange(e) {
+			console.log(e.target.value);
+			this.setState({
+				value: e.target.value
+			});
+			var data = {};
+			data[this.props.id] = {
+				value: e.target.value
+			};
+			chrome.storage.sync.set(data);
 		},
-		render: function() {
-			return (
-				React.createElement("div", {className: "option"}, 
-					React.createElement("label", null, this.props.name), " ", React.createElement("input", {onChange: this.handleValueChange, defaultValue: this.state.value, type: "text"})
-				)
+		componentWillMount: function componentWillMount() {
+			var _this = this;
+
+			var key = this.props.id;
+			chrome.storage.sync.get(key, function (item) {
+				_this.setState({ value: item[key].value });
+			});
+		},
+		render: function render() {
+			return React.createElement(
+				"div",
+				{ className: "option" },
+				React.createElement(
+					"label",
+					null,
+					this.props.name
+				),
+				" ",
+				React.createElement("input", { onChange: this.handleValueChange, defaultValue: this.state.value, type: "text" })
 			);
 		}
 	});
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		storage: {
+			sync: {
+				get: get,
+				set: set
+			}
+		}
+	}
+
+	function get(item, callback) {
+		var data = {}
+		data[item] = JSON.parse(localStorage.getItem(item));
+		callback(data);
+	}
+
+	function set(item, callback) {
+		for(key in item) {
+			localStorage.setItem(key, JSON.stringify(item[key]));
+		}
+		if(callback && typeof callback === 'function') {
+			callback();
+		}
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"options": [
+			{
+				"type": "string",
+				"id": "username",
+				"name": "Username",
+				"value": ""
+			},
+			{
+				"type": "string",
+				"id": "password",
+				"name": "Password",
+				"value": ""
+			}
+		]
+	};
 
 /***/ }
 /******/ ]);

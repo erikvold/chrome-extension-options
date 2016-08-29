@@ -9,19 +9,22 @@ module.exports = React.createClass({
 		}
 	},
 	handleValueChange: function(e) {
+		console.log('handleValueChange called', e);
 		this.setState({
 			value: e.target.value
 		});
 		var data = {};
 		data[this.props.id] = {
-			value: this.state.value
+			value: e.target.value
 		}
 		chrome.storage.sync.set(data);
 	},
 	componentWillMount: function() {
 		var key = this.props.id;
 		chrome.storage.sync.get(key, (item) => {
-			this.setState({ value: item[key].value});
+			if(item !== undefined) {
+				this.setState({ value: item[key].value});
+			}
 		});
 	},
 	render: function() {

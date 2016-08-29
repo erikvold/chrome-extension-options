@@ -10,7 +10,12 @@ module.exports = {
 function get(item, callback) {
 	var data = {}
 	data[item] = JSON.parse(localStorage.getItem(item));
-	callback(data);
+	console.log(data[item]);
+	if(data[item]) {
+		callback(data);
+	} else {
+		callback(undefined);
+	}
 }
 
 function set(item, callback) {
