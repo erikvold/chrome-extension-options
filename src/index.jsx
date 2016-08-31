@@ -7,5 +7,5 @@ var optionsJSON = require('./options.json');
 
 
 
-ReactDOM.render(<StringOption id={options[0].id} name={options[0].name} />, document.getElementById('content'));
+ReactDOM.render(<StringOption id={optionsJSON[0].id} name={optionsJSON[0].name} />, document.getElementById('content'));
 

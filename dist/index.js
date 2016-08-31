@@ -49,11 +49,9 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
 	var StringOption = __webpack_require__(3);
-	var options = __webpack_require__(5);
+	var optionsJSON = __webpack_require__(5);
 
-	console.log(options);
-
-	ReactDOM.render(React.createElement(StringOption, { id: options[0].id, name: options[0].name }), document.getElementById('content'));
+	ReactDOM.render(React.createElement(StringOption, { id: optionsJSON[0].id, name: optionsJSON[0].name }), document.getElementById('content'));
 
 /***/ },
 /* 1 */
@@ -84,7 +82,7 @@
 			};
 		},
 		handleValueChange: function handleValueChange(e) {
-			console.log(e.target.value);
+			console.log('handleValueChange called', e);
 			this.setState({
 				value: e.target.value
 			});
@@ -99,7 +97,9 @@
 
 			var key = this.props.id;
 			chrome.storage.sync.get(key, function (item) {
-				_this.setState({ value: item[key].value });
+				if (item !== undefined) {
+					_this.setState({ value: item[key].value });
+				}
 			});
 		},
 		render: function render() {
@@ -133,7 +133,12 @@
 	function get(item, callback) {
 		var data = {}
 		data[item] = JSON.parse(localStorage.getItem(item));
-		callback(data);
+		console.log(data[item]);
+		if(data[item]) {
+			callback(data);
+		} else {
+			callback(undefined);
+		}
 	}
 
 	function set(item, callback) {
@@ -149,22 +154,20 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	module.exports = {
-		"options": [
-			{
-				"type": "string",
-				"id": "username",
-				"name": "Username",
-				"value": ""
-			},
-			{
-				"type": "string",
-				"id": "password",
-				"name": "Password",
-				"value": ""
-			}
-		]
-	};
+	module.exports = [
+		{
+			"type": "string",
+			"id": "username",
+			"name": "Username",
+			"value": ""
+		},
+		{
+			"type": "string",
+			"id": "password",
+			"name": "Password",
+			"value": ""
+		}
+	];
 
 /***/ }
 /******/ ]);
