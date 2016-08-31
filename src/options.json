@@ -1,0 +1,14 @@
+[
+	{
+		"type": "string",
+		"id": "username",
+		"name": "Username",
+		"value": ""
+	},
+	{
+		"type": "string",
+		"id": "password",
+		"name": "Password",
+		"value": ""
+	}
+]
