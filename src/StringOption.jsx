@@ -1,8 +1,8 @@
 "use strict";
 
-var chrome = require('./chrome.storage.js');
+import chrome from './chrome.storage.js';
 
-module.exports = React.createClass({
+export default React.createClass({
 	getInitialState: function() {
 		return {
 			value: ""

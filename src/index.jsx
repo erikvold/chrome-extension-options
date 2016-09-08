@@ -1,9 +1,9 @@
 'use strict'
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var StringOption = require('./StringOption');
-var optionsJSON = require('./options.json');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import StringOption from './StringOption';
+import optionsJSON from './options.json';
 
 
 
