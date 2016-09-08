@@ -20,7 +20,7 @@ export default React.createClass({
 				break;
 		}
 		return (
-			<div className="option">
+			<div className="option-group__option-container">
 				{option}
 			</div>
 		);
