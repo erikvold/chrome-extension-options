@@ -22,7 +22,7 @@ export default React.createClass({
 	},
 	getInitialState: function() {
 		return {
-			value: undefined
+			value: this.props.value
 		}
 	},
 	handleValueChange: function(val) {
