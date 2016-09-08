@@ -6,7 +6,7 @@
 		"value": ""
 	},
 	{
-		"type": "string",
+		"type": "password",
 		"id": "password",
 		"name": "Password",
 		"value": ""

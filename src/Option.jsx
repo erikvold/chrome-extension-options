@@ -1,6 +1,7 @@
 "use strict";
 
 import StringOption from './StringOption';
+import PasswordOption from './PasswordOption';
 import chrome from './chrome.storage.js';
 
 export default React.createClass({
@@ -9,6 +10,9 @@ export default React.createClass({
 		switch(this.props.type) {
 			case 'string':
 				option = (<StringOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
+				break;				
+			case 'password':
+				option = (<PasswordOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
 				break;
 		}
 		return (
