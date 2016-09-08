@@ -6,7 +6,7 @@ export default React.createClass({
 	render: function() {
 		var options = this.props.options.map( (option) => {
 			return (
-				<Option type={option.type} name={option.name} id={option.id} />
+				<Option key={option.id} type={option.type} name={option.name} id={option.id} />
 			);
 		});
 		return (
