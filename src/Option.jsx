@@ -2,6 +2,7 @@
 
 import StringOption from './StringOption';
 import PasswordOption from './PasswordOption';
+import BooleanOption from './BooleanOption';
 import chrome from './chrome.storage.js';
 
 export default React.createClass({
@@ -13,6 +14,9 @@ export default React.createClass({
 				break;				
 			case 'password':
 				option = (<PasswordOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
+				break;			
+			case 'boolean':
+				option = (<BooleanOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
 				break;
 		}
 		return (
@@ -23,17 +27,17 @@ export default React.createClass({
 	},
 	getInitialState: function() {
 		return {
-			value: ""
+			value: undefined
 		}
 	},
-	handleValueChange: function(e) {
-		console.log('handleValueChange called', e);
+	handleValueChange: function(val) {
+		console.log('handleValueChange called', val, typeof val);
 		this.setState({
-			value: e.target.value
+			value: val
 		});
 		var data = {};
 		data[this.props.id] = {
-			value: e.target.value
+			value: val
 		}
 		chrome.storage.sync.set(data);
 	},

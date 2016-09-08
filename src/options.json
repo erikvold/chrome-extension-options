@@ -10,5 +10,11 @@
 		"id": "password",
 		"name": "Password",
 		"value": ""
+	},
+	{
+		"type": "boolean",
+		"id": "yes-or-no",
+		"name": "Yes or no?",
+		"value": false
 	}
 ]
