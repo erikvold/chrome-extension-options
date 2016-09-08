@@ -17,6 +17,11 @@ module.exports = {
 				test: /\.json$/,
 				loader: 'json-loader',
 				exclude: /node_modules/
+			},
+			{
+				test: /\.yaml$/,
+				loader: 'yaml',
+				exclude: /node_modules/
 			}
 		]
 	},
