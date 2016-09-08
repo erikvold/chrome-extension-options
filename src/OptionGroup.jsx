@@ -10,9 +10,9 @@ export default React.createClass({
 			);
 		});
 		return (
-			<div className="option-group">
+			<fieldset className="option-group">
 				{options}
-			</div>
+			</fieldset>
 		);
 	}
 });
