@@ -29,7 +29,7 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="option">
+			<div className="option--string">
 				<label>{this.props.name}</label> <input onChange={this.handleValueChange} defaultValue={this.state.value} type="text" />
 			</div>
 		);
