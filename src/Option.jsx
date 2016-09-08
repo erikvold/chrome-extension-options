@@ -7,22 +7,17 @@ import chrome from './chrome.storage.js';
 
 export default React.createClass({
 	render: function() {
-		var option;
-		switch(this.props.type) {
-			case 'string':
-				option = (<StringOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
-				break;				
-			case 'password':
-				option = (<PasswordOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
-				break;			
-			case 'boolean':
-				option = (<BooleanOption onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />);
-				break;
+		
+		var optionTypes = {
+			string: StringOption,
+			password: PasswordOption,
+			boolean: BooleanOption
 		}
+		
+		var Component = optionTypes[this.props.type];
+		
 		return (
-			<div className="option-group__option-container">
-				{option}
-			</div>
+			<Component onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />
 		);
 	},
 	getInitialState: function() {
