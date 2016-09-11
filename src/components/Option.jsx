@@ -3,7 +3,7 @@
 import StringOption from './StringOption';
 import PasswordOption from './PasswordOption';
 import BooleanOption from './BooleanOption';
-import chrome from './chrome.storage.js';
+import chrome from '../chrome.storage.js';
 
 export default React.createClass({
 	render: function() {
