@@ -1,15 +1,34 @@
--
-  type: string
-  id: username
-  name: Username
-  value: "mrmikemccabe"
--
-  type: password
-  id: password
-  name: Password
-  value: "12345"
--
-  type: boolean
-  id: yes-or-no
-  name: Yes or no?
-  value: true
+title: Options
+options:
+  groups:
+  -
+    title: 1st Group
+    options:
+      -
+        type: string
+        id: username
+        name: Username
+        value: "mrmikemccabe"
+      -
+        type: password
+        id: password
+        name: Password
+        value: "12345"
+      -
+        type: boolean
+        id: yes-or-no
+        name: Yes or no?
+        value: true
+  -
+    title: 2nd Group
+    options:
+      -
+        type: string
+        id: cdn-username
+        name: CDN Username
+        value: 
+      -
+        type: string
+        id: cdn-key
+        name: CDN Key
+        value: 
