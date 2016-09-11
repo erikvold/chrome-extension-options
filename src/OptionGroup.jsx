@@ -11,6 +11,7 @@ export default React.createClass({
 		});
 		return (
 			<fieldset className="option-group">
+				<legend>{this.props.title}</legend>
 				{options}
 			</fieldset>
 		);
