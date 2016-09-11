@@ -26,7 +26,7 @@ export default React.createClass({
 		}
 	},
 	handleValueChange: function(val) {
-		console.log('handleValueChange called', val, typeof val);
+		
 		this.setState({
 			value: val
 		});

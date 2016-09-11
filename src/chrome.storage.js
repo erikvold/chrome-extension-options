@@ -8,9 +8,11 @@ module.exports = {
 }
 
 function get(item, callback) {
+
 	var data = {}
+	
 	data[item] = JSON.parse(localStorage.getItem(item));
-	console.log(data[item]);
+
 	if(data[item]) {
 		callback(data);
 	} else {
