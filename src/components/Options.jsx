@@ -1,5 +1,6 @@
 "use strict";
 
+import React from 'react';
 import OptionGroup from './OptionGroup';
 
 export default React.createClass({

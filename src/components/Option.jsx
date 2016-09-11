@@ -1,5 +1,6 @@
 "use strict";
 
+import React from 'react';
 import StringOption from './StringOption';
 import PasswordOption from './PasswordOption';
 import BooleanOption from './BooleanOption';

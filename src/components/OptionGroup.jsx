@@ -1,5 +1,6 @@
 "use strict";
 
+import React from 'react';
 import Option from './Option';
 
 export default React.createClass({
