@@ -10,9 +10,17 @@ export default React.createClass({
 				<Option key={option.id} type={option.type} name={option.name} id={option.id} initialValue={option.value} />
 			);
 		});
+
+		var description;
+
+		if(this.props.description) {
+			description = (<p className="option-group__description">{this.props.description}</p>)
+		}
+
 		return (
 			<fieldset className="option-group">
 				<legend>{this.props.title}</legend>
+				{description}
 				{options}
 			</fieldset>
 		);

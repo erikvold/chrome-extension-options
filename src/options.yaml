@@ -3,6 +3,8 @@ options:
   groups:
   -
     title: 1st Group
+    description: This is a description that will be shown before
+      before your options.
     options:
       -
         type: string

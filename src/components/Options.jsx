@@ -8,7 +8,7 @@ export default React.createClass({
 
 		var optionGroups = this.props.options.options.groups.map( (group) => {
 			const key = group.title.replace(/\s/g, "-").toLowerCase();
-			return (<OptionGroup key={group.title} title={group.title} options={group.options} />)
+			return (<OptionGroup key={group.title} title={group.title} options={group.options} description={group.description} />)
 		});
 		return (
 			<div className="options">
