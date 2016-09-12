@@ -4,7 +4,8 @@ module.exports = {
 	entry: './src/index.jsx',
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: 'options.js'
+		filename: 'options.js',
+		publicPath: 'dist/'
 	},
 	module: {
 		loaders: [
