@@ -11,7 +11,11 @@ export default React.createClass({
 			);
 		});
 
-		var description;
+		var description, title;
+
+		if(this.props.title) {
+			title = (<legend className="option-group__group-title">{this.props.title}</legend>)
+		}
 
 		if(this.props.description) {
 			description = (<p className="option-group__description">{this.props.description}</p>)
@@ -19,7 +23,7 @@ export default React.createClass({
 
 		return (
 			<fieldset className="option-group">
-				<legend>{this.props.title}</legend>
+				{title}
 				{description}
 				{options}
 			</fieldset>

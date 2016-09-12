@@ -22,7 +22,6 @@ options:
         name: Yes or no?
         value: true
   -
-    title: 2nd Group
     options:
       -
         type: string
