@@ -10,9 +10,16 @@ export default React.createClass({
 			const key = "option-group-" + index;
 			return (<OptionGroup key={key} title={group.title} options={group.options} description={group.description} />)
 		});
+
+		var title;
+
+		if(this.props.data.title) {
+			title = <h1 className="title">{this.props.data.title}</h1>;
+		}
+
 		return (
 			<div className="options">
-				<h1>{this.props.data.title}</h1>
+				{title}
 				{optionGroups}
 			</div>
 		);
