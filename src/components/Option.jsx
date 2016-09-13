@@ -20,7 +20,7 @@ export default React.createClass({
 		var Component = optionTypes[this.props.type];
 		
 		return (
-			<Component onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} />
+			<Component onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} placeholder={this.props.placeholder} />
 		);
 	},
 	getInitialState: function() {

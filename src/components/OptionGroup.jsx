@@ -7,7 +7,7 @@ export default React.createClass({
 	render: function() {
 		var options = this.props.options.map( (option) => {
 			return (
-				<Option key={option.id} type={option.type} name={option.name} id={option.id} initialValue={option.value} />
+				<Option key={option.id} type={option.type} name={option.name} id={option.id} initialValue={option.value} placeholder={option.placeholder} />
 			);
 		});
 

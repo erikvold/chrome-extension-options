@@ -27,7 +27,8 @@ options:
         type: string
         id: cdn-username
         name: CDN Username
-        value: 
+        value: ""
+        placeholder: This is a placeholder
       -
         type: string
         id: cdn-key
