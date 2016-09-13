@@ -5,9 +5,10 @@ import Option from './Option';
 
 export default React.createClass({
 	render: function() {
-		var options = this.props.options.map( (option) => {
+		var options = this.props.options.map( (option, index) => {
+			let key = "option-" + index;
 			return (
-				<Option key={option.id} type={option.type} name={option.name} id={option.id} initialValue={option.value} placeholder={option.placeholder} />
+				<Option key={key} data={option} />
 			);
 		});
 

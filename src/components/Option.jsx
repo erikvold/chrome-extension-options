@@ -17,15 +17,15 @@ export default React.createClass({
 			textarea: TextareaOption
 		}
 		
-		var Component = optionTypes[this.props.type];
+		var Component = optionTypes[this.props.data.type];
 		
 		return (
-			<Component onChange={this.handleValueChange} id={this.props.id} name={this.props.name} value={this.state.value} placeholder={this.props.placeholder} />
+			<Component onChange={this.handleValueChange} id={this.props.data.id} name={this.props.data.name} value={this.state.value} placeholder={this.props.data.placeholder} />
 		);
 	},
 	getInitialState: function() {
 		return {
-			value: this.props.initialValue
+			value: this.props.data.value
 		}
 	},
 	handleValueChange: function(val) {
@@ -34,13 +34,13 @@ export default React.createClass({
 			value: val
 		});
 		var data = {};
-		data[this.props.id] = {
+		data[this.props.data.id] = {
 			value: val
 		}
 		chrome.storage.sync.set(data);
 	},
 	componentWillMount: function() {
-		var key = this.props.id;
+		var key = this.props.data.id;
 		chrome.storage.sync.get(key, (item) => {
 			if(item !== undefined) {
 				this.setState({ value: item[key].value});
