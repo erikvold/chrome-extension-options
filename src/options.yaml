@@ -33,3 +33,11 @@ options:
         id: cdn-key
         name: CDN Key
         value: 
+  -
+    title: Textarea option
+    options:
+      -
+        type: textarea
+        id: textarea
+        name: Textarea
+        value: 

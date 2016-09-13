@@ -2,6 +2,7 @@
 
 import React from 'react';
 import StringOption from './StringOption';
+import TextareaOption from './TextareaOption';
 import PasswordOption from './PasswordOption';
 import BooleanOption from './BooleanOption';
 import chrome from '../chrome.storage.js';
@@ -12,7 +13,8 @@ export default React.createClass({
 		var optionTypes = {
 			string: StringOption,
 			password: PasswordOption,
-			boolean: BooleanOption
+			boolean: BooleanOption,
+			textarea: TextareaOption
 		}
 		
 		var Component = optionTypes[this.props.type];
