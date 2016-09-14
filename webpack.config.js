@@ -3,9 +3,9 @@ var path = require("path");
 module.exports = {
 	entry: './src/index.jsx',
 	output: {
-		path: path.resolve(__dirname, "dist"),
+		path: path.resolve(__dirname, "build"),
 		filename: 'options.js',
-		publicPath: 'dist/'
+		publicPath: 'build/'
 	},
 	module: {
 		loaders: [
