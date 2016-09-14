@@ -1,5 +1,8 @@
 'use strict'
 
+import 'file?name=options.html!./options.html'
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Options from './components/Options';
