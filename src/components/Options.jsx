@@ -1,15 +1,21 @@
 "use strict";
 
 import React from 'react';
-import OptionGroup from './OptionGroup';
+import Option from './Option';
 
 export default React.createClass({
 	render: function() {
 
-		var optionGroups = this.props.data.options.groups.map( (group, index) => {
-			const key = "option-group-" + index;
-			return (<OptionGroup key={key} title={group.title} options={group.options} description={group.description} />)
-		});
+		let optionComponents;
+
+		const options = this.props.data.options;
+
+		if(options.length && options.length > 0) {
+			optionComponents = options.map( (option, index) => {
+				const key = "option-" + index;
+				return (<Option key={key} data={option} />)
+			});
+		}
 
 		var title;
 
@@ -20,7 +26,7 @@ export default React.createClass({
 		return (
 			<div className="options">
 				{title}
-				{optionGroups}
+				{optionComponents}
 			</div>
 		);
 	}

@@ -1,44 +1,33 @@
 title: Options
 options:
-  groups:
-  -
-    title: 1st Group
-    description: This is a description that will be shown before
-      before your options.
-    options:
-      -
-        type: string
-        id: username
-        name: Username
-        value: "mrmikemccabe"
-      -
-        type: password
-        id: password
-        name: Password
-        value: "12345"
-      -
-        type: boolean
-        id: yes-or-no
-        name: Yes or no?
-        value: true
-  -
-    options:
-      -
-        type: string
-        id: cdn-username
-        name: CDN Username
-        value: ""
-        placeholder: This is a placeholder
-      -
-        type: string
-        id: cdn-key
-        name: CDN Key
-        value: 
-  -
-    title: Textarea option
-    options:
-      -
-        type: textarea
-        id: textarea
-        name: Textarea
-        value: 
+  - type: string
+    id: username
+    name: Username
+    value: "mrmikemccabe"
+
+  - type: password
+    id: password
+    name: Password
+    value: "12345"
+    group: group-1
+
+  - type: boolean
+    id: yes-or-no
+    name: Yes or no?
+    value: true
+
+  - type: string
+    id: cdn-username
+    name: CDN Username
+    value: ""
+
+    placeholder: This is a placeholder
+  - type: string
+    id: cdn-key
+    name: CDN Key
+    value:
+
+  - type: textarea
+    id: textarea
+    name: Textarea
+    value:

@@ -5,7 +5,7 @@ import Option from './Option';
 
 export default React.createClass({
 	render: function() {
-		var options = this.props.options.map( (option, index) => {
+		var options = this.props.data.options.map( (option, index) => {
 			let key = "option-" + index;
 			return (
 				<Option key={key} data={option} />
@@ -14,12 +14,12 @@ export default React.createClass({
 
 		var description, title;
 
-		if(this.props.title) {
-			title = (<legend className="option-group__group-title">{this.props.title}</legend>)
+		if(this.props.data.title) {
+			title = (<legend className="option-group__group-title">{this.props.data.title}</legend>)
 		}
 
-		if(this.props.description) {
-			description = (<p className="option-group__description">{this.props.description}</p>)
+		if(this.props.data.description) {
+			description = (<p className="option-group__description">{this.props.data.description}</p>)
 		}
 
 		return (
