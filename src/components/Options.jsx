@@ -55,23 +55,27 @@ export default React.createClass({
 	},
 
 	saveChanges: function() {
+		var data = {};
 		for(var key in this.state) {
-			var data = {};
 			data[key] = {
 				value: this.state[key]
 			}
-			chrome.storage.sync.set(data);
 		}
+		chrome.storage.sync.set({
+			options: data
+		});
 	},
 	getChromeStorageState: function() {
-		chrome.storage.sync.get( (storage) => {
-			var state = {};
-			for(var key in storage) {
-				if(storage[key].value !== null) {
-					state[key] = storage[key].value;
+		chrome.storage.sync.get('options', (storage) => {
+			if(storage.options) {
+				var state = {};
+				for(var key in storage.options) {
+					if(storage.options[key].value !== null) {
+						state[key] = storage.options[key].value;
+					}
 				}
+				this.setState(state);
 			}
-			this.setState(state);
 		});
 	}
 });
