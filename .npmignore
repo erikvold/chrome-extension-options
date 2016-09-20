@@ -1,0 +1,3 @@
+.babelrc
+assets/
+webpack.*.config.js
