@@ -1,3 +1,7 @@
 .babelrc
+.npmignore
 assets/
-webpack.*.config.js
+build/
+src/
+webpack.dev.config.js
+webpack.config.js
