@@ -5,7 +5,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<div className="option--string">
-				<label>{this.props.name}</label> <input onChange={this.handleChange} defaultValue={this.props.value} type="text" placeholder={this.props.placeholder} />
+				<label>{this.props.name}</label> <input onChange={this.handleChange} value={this.props.value} type="text" placeholder={this.props.placeholder} />
 			</div>
 		);
 	},
@@ -13,5 +13,5 @@ export default React.createClass({
 		var val = e.target.value;
 		this.props.onChange(val);
 	}
-	
+
 });

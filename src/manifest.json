@@ -1,0 +1,21 @@
+{
+	"name": "Chrome Extension Options",
+	"version": "0.1.0",
+	"description": "React Options Components",
+	"manifest_version": 2,
+	"minimum_chrome_version": "23",
+	"icons" : {
+		"128": "assets/icon-128.png",
+		"48" : "assets/icon-48.png",
+		"16" : "assets/icon-16.png"
+	},
+	"permissions": [
+		"storage",
+		"notifications"
+	],
+  "options_ui": {
+   "page": "options.html",
+   "chrome_style": true
+  },
+  "web_accessible_resources": ["options.html"]
+}

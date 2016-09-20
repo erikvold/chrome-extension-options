@@ -15,9 +15,9 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.json$/,
-				loader: 'json-loader',
-				exclude: /node_modules/
+				test: /\.png$/,
+				loader: 'file-loader?name=[path][name].[ext]',
+				include: /assets/
 			}
 		]
 	},

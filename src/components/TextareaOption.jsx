@@ -5,7 +5,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<div className="option--textarea">
-				<label>{this.props.name}</label> <textarea onChange={this.handleChange} defaultValue={this.props.value} type="text" />
+				<label>{this.props.name}</label> <textarea onChange={this.handleChange} value={this.props.value} type="text" />
 			</div>
 		);
 	},
@@ -13,5 +13,5 @@ export default React.createClass({
 		var val = e.target.value;
 		this.props.onChange(val);
 	}
-	
+
 });
