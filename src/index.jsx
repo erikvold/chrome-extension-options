@@ -12,4 +12,4 @@ import ReactDOM from 'react-dom';
 import Options from './components/Options';
 import optionsYAML from 'json!yaml!./options.yaml';
 
-ReactDOM.render(<Options id="option-group" data={optionsYAML} />, document.getElementById('content'));
+ReactDOM.render(<Options id="option-group" title={optionsYAML.title} options={optionsYAML.options} />, document.getElementById('content'));
