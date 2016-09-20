@@ -5,7 +5,6 @@ import StringOption from './StringOption';
 import TextareaOption from './TextareaOption';
 import PasswordOption from './PasswordOption';
 import BooleanOption from './BooleanOption';
-//import chrome from '../chrome.storage.js';
 
 export default React.createClass({
 	render: function() {
