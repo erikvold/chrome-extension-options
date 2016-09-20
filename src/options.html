@@ -5,19 +5,41 @@
 		<meta charset="utf-8">
 		<style>
 
-			.option {
+			* {
+				box-sizing: border-box;
+			}
+
+			.wrapper {
 				padding: 1em;
-				outline: solid 1px blue;
+			}
+
+			.title {
+				margin-top: 0;
+			}
+
+			.options {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			.option {
+				width: 100%;
+				padding: .5em 0;
 			}
 
 			.option__label {
 				display: block;
 			}
 
-			.option--boolean .option__label {
-				display: inline;
-				vertical-align: bottom;
+			.option__input {
+				width: 100%;
 			}
+
+			.button--save {
+				margin-top: 1em;
+			}
+
 		</style>
 	</head>
 	<body>

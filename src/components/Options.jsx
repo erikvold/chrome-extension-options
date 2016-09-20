@@ -24,10 +24,12 @@ export default React.createClass({
 		}
 
 		return (
-			<div className="options">
+			<div className="wrapper">
 				{title}
+				<div className="options">
 				{optionComponents}
-				<button onClick={ this.saveChanges }>Save changes</button>
+				</div>
+				<button className="button button--save" onClick={ this.saveChanges }>Save changes</button>
 			</div>
 		);
 	},
