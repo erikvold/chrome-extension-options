@@ -4,8 +4,8 @@ import React from 'react';
 export default React.createClass({
 	render: function() {
 		return (
-			<div className="option--boolean">
-				<label>{this.props.name}</label> <input id={this.props.id} onChange={this.handleChange} checked={this.props.value} type="checkbox" />
+			<div className="option option--boolean" id={"option--" + this.props.id}>
+				<label className="option__label">{this.props.name}</label> <input className="option__input" id={this.props.id} onChange={this.handleChange} checked={this.props.value} type="checkbox" />
 			</div>
 		);
 	},
