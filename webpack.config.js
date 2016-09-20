@@ -1,23 +1,20 @@
 var path = require("path");
 
 module.exports = {
-	entry: './src/index.jsx',
+	entry: './src/components/index.js',
 	output: {
-		path: path.resolve(__dirname, "build"),
-		filename: 'options.js',
-		publicPath: 'build/'
+		path: path.resolve(__dirname, "lib"),
+		filename: 'index.js',
+		library: 'chrome-extension-options',
+		libraryTarget: 'umd',
+    umdNamedDefine: true
 	},
 	module: {
 		loaders: [
 			{
-				test: /\.jsx$/,
-				loader: 'babel-loader',
+				test: /\.jsx|\.js$/,
+				loader: 'babel',
 				exclude: /node_modules/
-			},
-			{
-				test: /\.png$/,
-				loader: 'file-loader?name=[path][name].[ext]',
-				include: /assets/
 			}
 		]
 	},
