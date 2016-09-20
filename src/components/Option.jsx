@@ -24,7 +24,7 @@ export default React.createClass({
 	},
 	getInitialState: function() {
 		return {
-			value: this.props.data.value
+			value: this.props.data.defaultValue
 		}
 	},
 	handleValueChange: function(val) {

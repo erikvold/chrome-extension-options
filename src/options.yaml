@@ -3,31 +3,30 @@ options:
   - type: string
     id: username
     name: Username
-    value: "mrmikemccabe"
+    defaultValue: "mrmikemccabe"
 
   - type: password
     id: password
     name: Password
-    value: "12345"
-    group: group-1
+    defaultValue: "12345"
 
   - type: boolean
     id: yes-or-no
     name: Yes or no?
-    value: true
+    defaultValue: true
 
   - type: string
     id: cdn-username
     name: CDN Username
-    value: ""
-
+    defaultValue:
     placeholder: This is a placeholder
+
   - type: string
     id: cdn-key
     name: CDN Key
-    value:
+    defaultValue:
 
   - type: textarea
     id: textarea
     name: Textarea
-    value:
+    defaultValue:
