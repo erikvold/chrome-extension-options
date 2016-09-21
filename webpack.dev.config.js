@@ -1,7 +1,7 @@
 var path = require("path");
 
 module.exports = {
-	entry: './src/index.jsx',
+	entry: './src/demo/index.jsx',
 	output: {
 		path: path.resolve(__dirname, "build"),
 		filename: 'options.js',
