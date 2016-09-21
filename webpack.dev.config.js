@@ -7,6 +7,8 @@ module.exports = {
 		filename: 'options.js',
 		publicPath: 'build/'
 	},
+	devtool: 'sourcemap',
+	debug: true,
 	module: {
 		loaders: [
 			{
