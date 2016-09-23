@@ -1,5 +1,6 @@
 'use strict'
 
+import './css/styles.css'
 import 'file?name=options.html!./options.html'
 import 'file?name=manifest.json!./manifest.json'
 import './assets/icon-128.png'
