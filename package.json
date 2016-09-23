@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-options",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Easily set up an options page for a Chrome Extension using React",
   "main": "lib/index.js",
   "scripts": {
