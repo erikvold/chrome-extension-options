@@ -1,3 +1,6 @@
+# Important
+This is a 0.x.x version and is therefore not ready for production use.
+
 #Usage
 
 ```javascript
