@@ -30,3 +30,4 @@ options:
     id: textarea
     name: Textarea
     defaultValue:
+    placeholder: This is a placeholder too
